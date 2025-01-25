@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+#gameContainer {
+    position: relative;
+    box-shadow: 0 0 50px rgba(76, 175, 80, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+}
+
+#gameBoard {
+    border: 3px solid #4CAF50;
+    border-radius: 12px;
+    background: #000;
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #4CAF50;
+    font-size: 24px;
+    text-shadow: 0 0 10px #4CAF50;
+    z-index: 2;
+}
+
+.snake {
+    background: #4CAF50 !important;
+    border: 1px solid #76ff03 !important;
+    box-shadow: 0 0 10px #76ff03;
+    border-radius: 3px;
+    transition: all 0.1s;
+}
+
+.food {
+    background: #ff4081 !important;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff4081;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#levelUp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff4081;
+    font-size: 48px;
+    text-shadow: 0 0 20px #ff4081;
+    display: none;
+    animation: levelUp 1s;
+}
+
+@keyframes levelUp {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(3); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0000;
+    font-size: 48px;
+    text-shadow: 0 0 20px #ff0000;
+    display: none;
+    animation: gameOverAnim 0.5s;
+}
+
+@keyframes gameOverAnim {
+    0% { letter-spacing: -20px; opacity: 0; }
+    100% { letter-spacing: normal; opacity: 1; }
+}
+
+.tunnel-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.8));
+}

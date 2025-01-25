@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Tunnel 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div class="tunnel-effect"></div>
+        <div id="scoreBoard">
+            Pontos: <span id="score">0</span> | 
+            Nível: <span id="level">1</span> | 
+            Recorde: <span id="highScore">0</span>
+        </div>
+        <canvas id="gameBoard"></canvas>
+        <div id="levelUp">Nível UP!</div>
+        <div class="gameOver">GAME OVER!</div>
+    </div>
+
+    <audio id="eatSound">
+        <source src="https://assets.mixkit.co/active_storage/sfx/257/257-preview.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="gameOverSound">
+        <source src="https://assets.mixkit.co/active_storage/sfx/259/259-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
