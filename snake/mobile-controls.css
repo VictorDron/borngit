@@ -1,0 +1,56 @@
+/* Controles Touch */
+.controls-container {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    gap: 10px;
+    touch-action: manipulation;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4CAF50;
+    border: 2px solid #76ff03;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-btn:active {
+    transform: scale(0.9);
+    background: #45a049;
+}
+
+/* Mostrar controles apenas em dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+    .controls-container {
+        display: flex;
+    }
+    
+    #gameContainer {
+        margin-bottom: 150px; /* Espaço para os controles */
+    }
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 600px) {
+    #gameContainer {
+        transform: scale(0.8);
+    }
+    
+    #scoreBoard {
+        font-size: 18px;
+        top: 10px;
+        left: 10px;
+    }
+}
